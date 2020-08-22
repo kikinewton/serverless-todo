@@ -69,5 +69,5 @@ export const getAllTodos = async (jwtToken: string): Promise<TodoItem[]> => {
   logger.info('in getAllTodos() function')
   const userId = parseUserId(jwtToken)
   logger.info('Getting all todo items for user: ', +userId)
-  return await todoAccess.getAllTodos(userId)
+  return await todoAccess.getUserTodos(userId)
 }

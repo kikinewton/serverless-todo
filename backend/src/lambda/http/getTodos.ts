@@ -25,4 +25,4 @@ export const handler = middy(
   }
 )
 
-handler.use(cors({ Credential: true }))
+handler.use(cors({ credentials: true }))

@@ -24,7 +24,7 @@ export class TodoAccess {
         IndexName: this.userIdIndex,
         KeyConditionExpression: 'userId = :userId',
         ExpressionAttributeValues: {
-          ':userId': userId
+          ':userId':userId
         }
       })
       .promise()
@@ -37,8 +37,8 @@ export class TodoAccess {
    */
   async createTodo(todo: TodoItem): Promise<TodoItem> {
     const item = {
-      ...todo,
-      attachmentUrl: `https://${this.bucketName}.s3.amazonaws.com/${todo.todoId}`
+      ...todo
+      // attachmentUrl: `https://${this.bucketName}.s3.amazonaws.com/${todo.todoId}`
     }
     logger.info('todo: >>' + JSON.stringify(item))
     const result = await this.docClient

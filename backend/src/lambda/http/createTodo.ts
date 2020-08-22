@@ -21,7 +21,7 @@ export const handler = middy(
       // TODO: Implement creating a new TODO item
       return {
         statusCode: 200,
-        body: JSON.stringify({ newItem })
+        body: JSON.stringify({ item:newItem })
       }
     } catch (err) {
       logger.error(err)
@@ -33,4 +33,4 @@ export const handler = middy(
   }
 )
 
-handler.use(cors({ Credentials: true }))
+handler.use(cors({ credentials: true }))
